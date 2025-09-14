@@ -2,18 +2,18 @@
 # the open-source pygame library
 # throughout this file
 import pygame
-import constants
-import player as ply
+from constants import *
+from player import Player
 
 def main():
     print("Starting Asteroids!")
-    print(f"Screen width: {constants.SCREEN_WIDTH}")
-    print(f"Screen height: {constants.SCREEN_HEIGHT}")
+    print(f"Screen width: {SCREEN_WIDTH}")
+    print(f"Screen height: {SCREEN_HEIGHT}")
     pygame.init()
     game_clock = pygame.time.Clock()
     dt = 0
-    screen = pygame.display.set_mode(size=(constants.SCREEN_WIDTH,constants.SCREEN_HEIGHT))
-    player = ply.Player(constants.SCREEN_WIDTH/2,constants.SCREEN_HEIGHT/2)
+    screen = pygame.display.set_mode(size=(SCREEN_WIDTH,SCREEN_HEIGHT))
+    player = Player(SCREEN_WIDTH/2,SCREEN_HEIGHT/2)
     while True:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
